@@ -1,0 +1,235 @@
+/* Nahh untuk di CSS ini komentarnya aku lgs ke poin poinnya aja yahh dimana aku nambahin properti baru dan 
+modif beberapa bagian misalnya di warna */ 
+html {
+    scroll-behavior: smooth; /* Ini supaya transisi scroll saat menu diklik jadi halus */
+}
+
+/* 1. PENGATURAN DASAR BODY (Penambahan Properti) */
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #0b0f17;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 24px 24px;
+    
+    /* (TAMBAHAN PROPERTI BARU 2: color) */
+    color: #e2e8f0; /* Menentukan warna teks default seluruh halaman */
+}
+
+/* 2. PENGATURAN HEADER (Penambahan Properti) */
+header {
+    padding: 35px 20px;
+    text-align: center;
+    background-color: #111827;
+    color: #ffffff;
+    
+    /* (TAMBAHAN PROPERTI BARU 3: border-bottom) */
+    border-bottom: 1px solid #1f2937; /* Garis batas bawah header */
+}
+
+header h1 {
+    margin-bottom: 6px;
+    
+    /* (TAMBAHAN PROPERTI BARU 4: letter-spacing) */
+    letter-spacing: 0.5px; /* Mengatur kerapatan/jarak antar huruf */
+}
+
+header p {
+    margin: 0;
+    color: #9ca3af;
+    font-size: 15px;
+}
+
+/* 3. PENGATURAN NAVIGASI (Penambahan Properti) */
+nav {
+    padding: 12px 25px;
+    background-color: #161f30;
+    border-bottom: 1px solid #1f2937;
+    
+    /* (TAMBAHAN PROPERTI BARU 5: display) */
+    display: flex; /* Mengaktifkan tata letak fleksibel untuk memisahkan menu kiri dan kanannya */
+    justify-content: space-between;
+    align-items: center;
+    
+    /* (TAMBAHAN PROPERTI BARU 6: position & top) */
+    position: sticky; /* Membuat navbar tetap menempel di atas saat di-scroll */
+    top: 0;
+    z-index: 100;
+}
+
+/* Ini Link Navigasi */
+.nav-links a {
+    color: #cbd5e1;
+    
+    /* (TAMBAHAN PROPERTI BARU 7: text-decoration) */
+    text-decoration: none; /* Menghilangkan garis bawah default link */
+    
+    /* (TAMBAHAN PROPERTI BARU 8: font-weight) */
+    font-weight: bold; /* Menebalkan teks link */
+    
+    /* (TAMBAHAN PROPERTI BARU 9: font-size) */
+    font-size: 14px; /* Menentukan ukuran huruf link */
+    
+    margin-right: 18px;
+    
+    /* (TAMBAHAN PROPERTI BARU 10: transition) */
+    transition: color 0.2s ease; /* Animasi pergantian warna yang mulus saat kursor hover */
+}
+
+.nav-links a:hover {
+    color: #38bdf8;
+    text-decoration: underline;
+}
+
+/* Dropdown Pemilih Bahasa */
+.lang-selector select {
+    background-color: #0b0f17;
+    color: #38bdf8;
+    border: 1px solid #374151;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+    outline: none;
+}
+
+/* 4. PENGATURAN ARTICLE (Penambahan Properti) */
+article {
+    padding: 30px;
+    max-width: 800px;
+    margin: 30px auto;
+    background-color: #111827;
+    border: 1px solid #1f2937;
+    
+    /* (TAMBAHAN PROPERTI BARU 11: border-radius) */
+    border-radius: 10px; /* Membuat sudut kotak article melengkung */
+    
+    /* (TAMBAHAN PROPERTI BARU 12: line-height) */
+    line-height: 1.6; /* Mengatur jarak/spasi antar baris kalimat */
+}
+
+article h2 {
+    color: #38bdf8;
+    margin-top: 10px;
+    margin-bottom: 12px;
+}
+
+/* Garis Pembatas Bagian */
+.divider {
+    border: 0;
+    border-top: 1px solid #1f2937;
+    margin: 25px 0;
+}
+
+/* 5. FOTO PROFIL & BIODATA */
+.profile-box {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.avatar-img {
+    /* (TAMBAHAN PROPERTI BARU 13 & 14: width & height) */
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    
+    /* (TAMBAHAN PROPERTI BARU 15: object-fit) */
+    object-fit: cover; /* Supaya fotonya gak gepeng / mempertahankan rasio asli */
+    
+    border: 3px solid #38bdf8;
+}
+
+.bio-text {
+    flex: 1;
+    min-width: 260px;
+}
+
+.bio-text p {
+    margin: 6px 0;
+}
+
+/* 6. LIST KEAHLIAN & MINAT */
+.skills-list {
+    margin-left: 20px;
+    color: #d1d5db;
+}
+
+.skills-list li {
+    margin-bottom: 6px;
+}
+
+/* 7. PORTOFOLIO & FAKTA UNIK */
+.project-item {
+    background-color: #161f30;
+    border: 1px solid #1f2937;
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.project-img {
+    width: 550px;
+    height: 800px;
+    border-radius: 6px;
+    object-fit: cover;
+    border: 1px solid #374151;
+}
+
+.project-desc {
+    flex: 1;
+    min-width: 260px;
+}
+
+.project-desc h3 {
+    margin: 0 0 8px 0;
+    color: #f3f4f6;
+    font-size: 16px;
+}
+
+.facts-list {
+    margin: 0 0 0 18px;
+    padding: 0;
+    color: #cbd5e1;
+    font-size: 13.5px;
+}
+
+.facts-list li {
+    margin-bottom: 5px;
+}
+
+/* 8. TAUTAN KONTAK */
+.contact-links-list {
+    list-style: none; /* Menghilangkan titik peluru bullet bawaan list */
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+.contact-links-list li {
+    margin-bottom: 8px;
+}
+
+.external-link {
+    color: #38bdf8;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.external-link:hover {
+    text-decoration: underline;
+}
+
+/* 9. PENGATURAN FOOTER */
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #0b0f17;
+    border-top: 1px solid #1f2937;
+    color: #6b7280;
+    font-size: 13px;
+}

@@ -1,0 +1,329 @@
+<!-- Sebelumnya aku mau jelasin dulu di Tugas ini memang fokus utamanya yaitu menstyling dan modif CSS, akan 
+ tetapi disini aku menambahkan JS sedikit secara mandiri dibagian fitur bahasa -->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <!-- Ini itu pengaturan metadata karakter agar teks dan simbol terbaca dengan benar -->
+    <meta charset="UTF-8">
+    <!-- Kalo ini pengaturan viewport agar layout halaman responsif di layar ponsel maupun desktop -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Judul tab pada browser -->
+    <title>Profil & Portofolio Stesa</title>
+    
+    <!-- Menghubungkan file style.css eksternal untuk styling halamannya -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 1. BAGIAN HEADER
+         Berisi judul utama dan subjudul pembuka halaman website-->
+    <header>
+        <!-- Judul utama dengan ID untuk kebutuhan pergantian teks bahasa -->
+        <h1 id="txt-title">PORTOFOLIO PRIBADI</h1>
+        <!-- Subjudul deskriptif di bawah judul utama -->
+        <p id="txt-subtitle">Selamat Datang di Ruang Karya & Profil Stesa Aurel Titania</p>
+    </header>
+
+    <!-- 2. BAGIAN NAVIGASI
+         Menu navigasi anchor link satu baris dan selektor bahasa -->
+    <nav>
+        <!-- Daftar tautan menu navigasi internal yang terhubung ke ID section -->
+        <div class="nav-links">
+            <a href="#sec-about" id="menu-about">Tentang</a>
+            <a href="#sec-skills" id="menu-skills">Keahlian & Minat</a>
+            <a href="#sec-portfolio" id="menu-projects">Portofolio</a>
+            <a href="#sec-links" id="menu-contact">Kontak</a>
+        </div>
+        
+        <!-- Dropdown switch bahasa di ujung kanan navbar -->
+        <div class="lang-selector">
+            <label for="lang-switch">🌐 </label>
+            <!-- Event onchange tujuannya sih ini utk memanggil fungsi JavaScript saat bahasa diganti -->
+            <select id="lang-switch" onchange="changeLanguage()">
+                <option value="id" selected>ID (Indonesia)</option>
+                <option value="en">EN (English)</option>
+                <option value="zh">ZH (中文)</option>
+                <option value="es">ES (Español)</option>
+            </select>
+        </div>
+    </nav>
+
+    <!-- 3. BAGIAN ARTICLE
+         Disini tuh untuk mewadahi seluruh konten inti dalam struktur layout satu kolom -->
+    <article>
+        
+        <!-- Ok, ini aku bagi jadi beberapa SECTION aja yahh -->
+        <!-- SECTION 1: Data Diri & Foto Profil Mahasiswi -->
+        <h2 id="sec-about">Tentang Saya</h2>
+        <div class="profile-box">
+            <!-- Foto profil mahasiswi (aku hehehe) berformat bulat melalui CSS -->
+            <img src="Stesa.jpeg" alt="Foto Profil Stesa Aurel Titania" class="avatar-img">
+            
+            <!-- Blok teks biodata dengan span ID terpisah agar mudah diterjemahin -->
+            <div class="bio-text">
+                <p><strong><span id="lbl-name">Nama</span>:</strong> <span id="val-name">Stesa Aurel Titania</span></p>
+                <p><strong><span id="lbl-nim">NIM</span>:</strong> <span id="val-nim">535250074</span></p>
+                <p><strong><span id="lbl-kelas">Kelas</span>:</strong> <span id="val-kelas">B</span></p>
+                <p><strong><span id="lbl-angkatan">Angkatan</span>:</strong> <span id="val-angkatan">2025</span></p>
+                <p><strong><span id="lbl-prodi">Program Studi</span>:</strong> <span id="val-prodi">Teknik Informatika</span></p>
+                <p><strong><span id="lbl-desc">Deskripsi Singkat</span>:</strong> <span id="val-desc">Mahasiswi yang saat ini sedang menempuh pendidikan S1 di Universitas Tarumanagara, bersemangat dalam mempelajari perancangan tampilan web modern, antarmuka interaktif, dan logika pemrograman dasar. Memiliki rasa ingin tahu yang tinggi mengenai banyak hal baru.</span></p>
+            </div>
+        </div>
+
+        <!-- Garis horizontal sebagai pemisah visual antar-bagian -->
+        <hr class="divider">
+
+        <!-- SECTION 2: Tiga Keahlian & Minat -->
+        <h2 id="sec-skills">Keahlian & Minat</h2>
+        <!-- Ini aku pake unordered list (ul) untuk menampilkan poin-poin keahlian -->
+        <ul class="skills-list">
+            <li id="skill-1">Pengembangan Tampilan Web Front-End (HTML5, CSS3, & Desain Responsif)</li>
+            <li id="skill-2">Logika Algoritma Dasar & Pemecahan Masalah Pemrograman</li>
+            <li id="skill-3">Desain Antarmuka Pengguna (UI/UX Design & Prototyping)</li>
+        </ul>
+
+        <!-- Garis pembatas bagian -->
+        <hr class="divider">
+
+        <!-- SECTION 3: Portofolio Proyek & Fakta Unik Pribadi -->
+        <h2 id="sec-portfolio">Portofolio & Fakta Unik</h2>
+        <div class="project-item">
+            <!-- Gambar thumbnail showcase proyek/portofolio -->
+            <img src="PortofolioMe.jpeg" alt="Showcase Portofolio Stesa" class="project-img">
+            
+            <!-- Deskripsi proyek berupa daftar fakta unik dengan list ul -->
+            <div class="project-desc">
+                <h3 id="proj-title">Fakta Unik Tentang Saya</h3>
+                <ul class="facts-list">
+                    <li id="fact-1">Lebih produktif saat malam hari dan suasana yang tenang.</li>
+                    <li id="fact-2">Suka dengan rasa asin gurih yang berlebihan (di atas rata-rata normal).</li>
+                    <li id="fact-3">Lebih fokus koding sambil mendengarkan musik pop atau instrumental.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Garis pembatas bagian -->
+        <hr class="divider">
+
+        <!-- SECTION 4: Tautan Luar & Media Kontak -->
+        <h2 id="sec-links">Kontak & Tautan Luar</h2>
+        <p id="txt-contact-desc">Silakan hubungi atau kunjungi profil saya melalui tautan berikut:</p>
+        
+        <!-- Daftar tautan eksternal menggunakan list -->
+        <ul class="contact-links-list">
+            <!-- Tautan ke akun GitHub -->
+            <li>
+                <strong>GitHub:</strong> 
+                <a href="https://github.com/stesaaureltitania-lgtm" target="_blank" class="external-link">github.com/stesaaureltitania-lgtm</a>
+            </li>
+            <!-- Tautan email langsung ke aplikasi mail client -->
+            <li>
+                <strong>Email:</strong> 
+                <a href="mailto:stesaaureltitania@gmail.com" class="external-link">stesaaureltitania@gmail.com</a>
+            </li>
+            <!-- Tautan ke profil Instagram -->
+            <li>
+                <strong>Instagram:</strong> 
+                <a href="https://instagram.com" target="_blank" class="external-link">@stesaaurel0707</a>
+            </li>
+        </ul>
+
+    </article>
+
+    <!-- 4. BAGIAN FOOTER
+         Nampilin tanda hak cipta dan nama mata kuliah -->
+    <footer>
+        <p>&copy; 2026 Stesa Aurel Titania - <span id="txt-footer">Front End Programming</span></p>
+    </footer>
+
+    <!-- 5. JAVASCRIPT MULTI-BAHASA
+         Logika pengubah teks dinamis untuk 4 bahasa pilihan -->
+    <script>
+        // Objek kamus terjemahan untuk Bahasa Indonesia, Inggris, Mandarin, dan Spanyol
+        // Ini aku pake sedikit javascript yahh, supaya lebih bagus aja ada fitur terjemahan multi-bahasa nya hehehehe
+        const translations = {
+            id: {
+                title: "PORTOFOLIO PRIBADI",
+                subtitle: "Selamat Datang di Ruang Karya & Profil Stesa Aurel Titania",
+                aboutMenu: "Tentang",
+                skillsMenu: "Keahlian & Minat",
+                projMenu: "Portofolio",
+                contactMenu: "Kontak",
+                secAbout: "Tentang Saya",
+                lblName: "Nama",
+                valName: "Stesa Aurel Titania",
+                lblNim: "NIM",
+                valNim: "535250074",
+                lblKelas: "Kelas",
+                valKelas: "B",
+                lblAngkatan: "Angkatan",
+                valAngkatan: "2025",
+                lblProdi: "Program Studi",
+                valProdi: "Teknik Informatika",
+                lblDesc: "Deskripsi Singkat",
+                valDesc: "Mahasiswi yang saat ini sedang menempuh pendidikan S1 di Universitas Tarumanagara, bersemangat dalam mempelajari perancangan tampilan web modern, antarmuka interaktif, dan logika pemrograman dasar. Memiliki rasa ingin tahu yang tinggi mengenai banyak hal baru.",
+                secSkills: "Keahlian & Minat",
+                skill1: "Pengembangan Tampilan Web Front-End (HTML5, CSS3, & Desain Responsif)",
+                skill2: "Logika Algoritma Dasar & Pemecahan Masalah Pemrograman",
+                skill3: "Desain Antarmuka Pengguna (UI/UX Design & Prototyping)",
+                secPortfolio: "Portofolio & Fakta Unik",
+                projTitle: "Fakta Unik Tentang Saya",
+                fact1: "Lebih produktif saat malam hari dan suasana yang tenang.",
+                fact2: "Suka dengan rasa asin gurih yang berlebihan (di atas rata-rata normal).",
+                fact3: "Lebih fokus koding sambil mendengarkan musik pop atau instrumental.",
+                secLinks: "Kontak & Tautan Luar",
+                contactDesc: "Silakan hubungi atau kunjungi profil saya melalui tautan berikut:",
+                footer: "Front End Programming"
+            },
+            en: {
+                title: "PERSONAL PORTFOLIO",
+                subtitle: "Welcome to the Showcase & Profile of Stesa Aurel Titania",
+                aboutMenu: "About",
+                skillsMenu: "Skills & Interests",
+                projMenu: "Portfolio",
+                contactMenu: "Contact",
+                secAbout: "About Me",
+                lblName: "Name",
+                valName: "Stesa Aurel Titania",
+                lblNim: "Student ID",
+                valNim: "535250074",
+                lblKelas: "Class",
+                valKelas: "B",
+                lblAngkatan: "Cohort Year",
+                valAngkatan: "2025",
+                lblProdi: "Major",
+                valProdi: "Informatics Engineering",
+                lblDesc: "Short Bio",
+                valDesc: "An undergraduate student currently studying at Tarumanagara University, enthusiastic about modern web design, interactive interfaces, and foundational programming logic. Possesses high curiosity towards learning new technologies.",
+                secSkills: "Skills & Interests",
+                skill1: "Front-End Web Development (HTML5, CSS3, & Responsive Design)",
+                skill2: "Algorithmic Logic & Basic Problem Solving",
+                skill3: "User Interface Design (UI/UX Design & Prototyping)",
+                secPortfolio: "Portfolio & Fun Facts",
+                projTitle: "Fun Facts About Me",
+                fact1: "Significantly more productive at night in a peaceful environment.",
+                fact2: "Big fan of overly savory and salty food (well above average).",
+                fact3: "More focused coding while listening to pop or instrumental music.",
+                secLinks: "Contact & External Links",
+                contactDesc: "Feel free to reach out or visit my online profiles below:",
+                footer: "Front End Programming"
+            },
+            zh: {
+                title: "个人作品集",
+                subtitle: "欢迎来到 Stesa Aurel Titania 的个人简介与作品空间",
+                aboutMenu: "关于",
+                skillsMenu: "技能与兴趣",
+                projMenu: "作品集",
+                contactMenu: "联系方式",
+                secAbout: "关于我",
+                lblName: "姓名",
+                valName: "Stesa Aurel Titania",
+                lblNim: "学号",
+                valNim: "535250074",
+                lblKelas: "班级",
+                valKelas: "B班",
+                lblAngkatan: "入学年份",
+                valAngkatan: "2025年",
+                lblProdi: "专业",
+                valProdi: "计算机科学 / 软件工程",
+                lblDesc: "个人简介",
+                valDesc: "目前就读于塔鲁玛迦大学（UNTAR）的本科生，热衷于学习现代网页界面开发、交互设计和编程逻辑。对探索新知识具有强烈的求知欲。",
+                secSkills: "技能与兴趣",
+                skill1: "前端网页开发 (HTML5, CSS3 与响应式布局)",
+                skill2: "算法逻辑与基础编程解题",
+                skill3: "用户界面与交互设计 (UI/UX 原型设计)",
+                secPortfolio: "作品集与趣事",
+                projTitle: "关于我的趣味小事",
+                fact1: "在夜晚和安静的环境下学习工作效率更高。",
+                fact2: "特别喜欢超重口味的咸鲜味美食（超出一般人水平）。",
+                fact3: "边听流行歌曲或轻音乐边写代码时注意力最集中。",
+                secLinks: "联系方式与外部链接",
+                contactDesc: "欢迎通过以下方式与我联系或查看我的代码主页：",
+                footer: "前端开发编程"
+            },
+            es: {
+                title: "PORTAFOLIO PERSONAL",
+                subtitle: "Bienvenido al Espacio de Proyectos y Perfil de Stesa Aurel Titania",
+                aboutMenu: "Sobre mí",
+                skillsMenu: "Habilidades",
+                projMenu: "Portafolio",
+                contactMenu: "Contacto",
+                secAbout: "Sobre Mí",
+                lblName: "Nombre",
+                valName: "Stesa Aurel Titania",
+                lblNim: "Matrícula",
+                valNim: "535250074",
+                lblKelas: "Clase",
+                valKelas: "B",
+                lblAngkatan: "Generación",
+                valAngkatan: "2025",
+                lblProdi: "Carrera",
+                valProdi: "Ingeniería Informática",
+                lblDesc: "Descripción",
+                valDesc: "Estudiante de licenciatura en la Universidad Tarumanagara, apasionada por el diseño web moderno, interfaces interactivas y la lógica de programación. Con gran curiosidad por aprender cosas nuevas constantemente.",
+                secSkills: "Habilidades e Intereses",
+                skill1: "Desarrollo Web Frontend (HTML5, CSS3 y Diseño Responsivo)",
+                skill2: "Lógica de Algoritmos y Resolución de Problemas",
+                skill3: "Diseño de Interfaces de Usuario (UI/UX y Prototipado)",
+                secPortfolio: "Portafolio y Datos Curiosos",
+                projTitle: "Datos Curiosos Sobre Mí",
+                fact1: "Mucho más productiva por la noche en un ambiente tranquilo.",
+                fact2: "Me fascina la comida muy salada y sabrosa (más de lo común).",
+                fact3: "Mayor concentración programando con música pop o instrumental.",
+                secLinks: "Contacto y Enlaces Externos",
+                contactDesc: "No dudes en contactarme o visitar mis perfiles en línea:",
+                footer: "Programación Front End"
+            }
+        };
+
+        // Fungsi yang dipanggil oleh atribut onchange untuk merender teks bahasa baru
+        function changeLanguage() {
+            // 1. Membaca kode bahasa terpilih dari elemen select (id, en, zh, atau es)
+            const lang = document.getElementById('lang-switch').value;
+            const data = translations[lang];
+
+            // 2. Memperbarui teks bagian Header & Menu Navigasi
+            document.getElementById('txt-title').innerText = data.title;
+            document.getElementById('txt-subtitle').innerText = data.subtitle;
+            document.getElementById('menu-about').innerText = data.aboutMenu;
+            document.getElementById('menu-skills').innerText = data.skillsMenu;
+            document.getElementById('menu-projects').innerText = data.projMenu;
+            document.getElementById('menu-contact').innerText = data.contactMenu;
+
+            // 3. Memperbarui teks bagian Biodata Diri
+            document.getElementById('sec-about').innerText = data.secAbout;
+            document.getElementById('lbl-name').innerText = data.lblName;
+            document.getElementById('val-name').innerText = data.valName;
+            document.getElementById('lbl-nim').innerText = data.lblNim;
+            document.getElementById('val-nim').innerText = data.valNim;
+            document.getElementById('lbl-kelas').innerText = data.lblKelas;
+            document.getElementById('val-kelas').innerText = data.valKelas;
+            document.getElementById('lbl-angkatan').innerText = data.lblAngkatan;
+            document.getElementById('val-angkatan').innerText = data.valAngkatan;
+            document.getElementById('lbl-prodi').innerText = data.lblProdi;
+            document.getElementById('val-prodi').innerText = data.valProdi;
+            document.getElementById('lbl-desc').innerText = data.lblDesc;
+            document.getElementById('val-desc').innerText = data.valDesc;
+
+            // 4. Memperbarui teks bagian Keahlian & Minat
+            document.getElementById('sec-skills').innerText = data.secSkills;
+            document.getElementById('skill-1').innerText = data.skill1;
+            document.getElementById('skill-2').innerText = data.skill2;
+            document.getElementById('skill-3').innerText = data.skill3;
+
+            // 5. Memperbarui teks bagian Portofolio & Fakta Unik
+            document.getElementById('sec-portfolio').innerText = data.secPortfolio;
+            document.getElementById('proj-title').innerText = data.projTitle;
+            document.getElementById('fact-1').innerText = data.fact1;
+            document.getElementById('fact-2').innerText = data.fact2;
+            document.getElementById('fact-3').innerText = data.fact3;
+
+            // 6. Memperbarui teks bagian Kontak Luar & Footer
+            document.getElementById('sec-links').innerText = data.secLinks;
+            document.getElementById('txt-contact-desc').innerText = data.contactDesc;
+            document.getElementById('txt-footer').innerText = data.footer;
+        }
+    </script>
+
+</body>
+</html>
